@@ -416,7 +416,6 @@ elif selected_section == "Results":
             showcoastlines=False,
             projection_type='natural earth',
             ),
-        height=500,
         margin=dict(l=0, r=0, t=70, b=0),
     )
 
@@ -430,7 +429,7 @@ elif selected_section == "Results":
     # create stacked bar chart
     fig = px.bar(df_count, y='EdLevel', x='Respondent', color='Gender', barmode='group', orientation='h',
                 title='Number of Respondents by Education Level and Gender')
-    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title='Number of Respondents', yaxis_title='Education Level',height=450)
+    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title='Number of Respondents', yaxis_title='Education Level')
 
     # Display the chart
     st.plotly_chart(fig)
