@@ -18,7 +18,7 @@ from sklearn.compose import make_column_transformer
 
 # Set display mode to inline
 # st.set_option('deprecation.showPyplotGlobalUse', False)
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",page_title='Tech Trends',page_icon=':chart_with_upwards_trend:')
 # st.set_option('deprecation.showfileUploaderEncoding', False)
 # st.set_option('deprecation.showPyplotGlobalUse', False)
 # st.set_option('deprecation.showPyplotGlobalUse', False)
