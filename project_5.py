@@ -561,4 +561,4 @@ elif selected_section == "Compensation Prediction Model":
     st.write('Education level:', ed_level)
     st.write('Age: ', f'<span style="color:lightgreen">{age}</span>', unsafe_allow_html=True)
     # st.write('Predicted compensation: $', predicted_compensation[0])
-    st.write('Predicted compensation: ', f'<span style="color:lightgreen">$ {predicted_compensation[0]}</span>', unsafe_allow_html=True)
+    st.write('Predicted compensation: ', f'<span style="color:lightgreen">$ {int(predicted_compensation[0])}</span>', unsafe_allow_html=True)
