@@ -494,13 +494,13 @@ elif selected_section == "Appendix":
     with left_col:
         DS1 = data_scientist.groupby('LanguageWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS1,x='Respondent',y='LanguageWorkedWith',orientation='h')
-        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',width=400,margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     with right_col:
         DS2 = data_scientist.groupby('LanguageDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS2,x='Respondent',y='LanguageDesireNextYear',orientation='h')
-        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',width=400,margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     st.divider()
