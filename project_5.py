@@ -215,7 +215,7 @@ elif selected_section == "Results":
     fig.update_xaxes(title_text='DatabaseDesireNextYear',row=1,col=2)
     fig.update_yaxes(title_text='N Respondents',row=1,col=2)
 
-    fig.update_layout(height=400,width=1200, title='Top 5 databases worked with and Desired Next Year By Respondents',showlegend=True,
+    fig.update_layout(height=400,width=1200,dragmode=False, selectdirection=None, title='Top 5 databases worked with and Desired Next Year By Respondents',showlegend=True,
         legend=dict(
             x=0.5,
             y=1.05,
@@ -267,7 +267,7 @@ elif selected_section == "Results":
     fig.update_xaxes(title_text='PlatformDesireNextYear',row=1,col=2)
     fig.update_yaxes(title_text='N Respondents',row=1,col=2)
 
-    fig.update_layout(height=400,width=1200, title='Top 5 Platforms worked with and Desired Next Year By Respondents',showlegend=True,
+    fig.update_layout(dragmode=False, selectdirection=None,height=400,width=1200, title='Top 5 Platforms worked with and Desired Next Year By Respondents',showlegend=True,
         legend=dict(
             x=0.5,
             y=1.05,
@@ -320,7 +320,7 @@ elif selected_section == "Results":
     fig.update_xaxes(title_text='WebFrameDesireNextYear',row=1,col=2)
     fig.update_yaxes(title_text='N Respondents',row=1,col=2)
 
-    fig.update_layout(height=400,width=1200, title='Top 5 Web Frameworks worked with and Desired Next Year By Respondents',showlegend=True,
+    fig.update_layout(dragmode=False, selectdirection=None,height=400,width=1200, title='Top 5 Web Frameworks worked with and Desired Next Year By Respondents',showlegend=True,
         legend=dict(
             x=0.5,
             y=1.05,
@@ -372,7 +372,7 @@ elif selected_section == "Results":
         title='Gender Distribution'
     )
 
-    fig.update_layout(legend=dict(
+    fig.update_layout(dragmode=False, selectdirection=None,legend=dict(
         x=0,
         y=1,
         traceorder='normal',
@@ -432,7 +432,7 @@ elif selected_section == "Results":
     # create stacked bar chart
     fig = px.bar(df_count, y='EdLevel', x='Respondent', color='Gender', barmode='group', orientation='h',
                 title='Number of Respondents by Education Level and Gender')
-    fig.update_layout(xaxis_title='Number of Respondents', yaxis_title='Education Level',height=600)
+    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title='Number of Respondents', yaxis_title='Education Level',height=600)
 
     # Display the chart
     st.plotly_chart(fig)
@@ -448,11 +448,12 @@ elif selected_section == "Results":
     ))
 
     # Customize the layout
-    fig.update_layout(
+    fig.update_layout(dragmode=False, selectdirection=None,
         title='Number of Respondents by Age',
         xaxis_title='Age',
         yaxis_title='Number of Respondents',
-        height = 500
+        height = 350,
+        width=500
     )
     st.plotly_chart(fig)
 
@@ -482,7 +483,7 @@ elif selected_section == "Appendix":
     rel_bash = rel_bash[['PlatformWorkedWith','Respondent']]
     st.subheader("Answering the question: Why are Bash/Shell/PowerShell among the top languages used? Here's a diagram of each platform to which this language contributes.")
     fig = px.bar(rel_bash,x='Respondent',y='PlatformWorkedWith',orientation='h')
-    fig.update_layout(xaxis_title="Number of Respondents",yaxis_title="Platform using Bash/Shell/Powershell",title='Bash/Shell/PowerShell Langauge Users for each Platform')
+    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Platform using Bash/Shell/Powershell",title='Bash/Shell/PowerShell Langauge Users for each Platform')
     st.plotly_chart(fig)
 
     st.divider()
@@ -495,13 +496,13 @@ elif selected_section == "Appendix":
     with left_col:
         DS1 = data_scientist.groupby('LanguageWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS1,x='Respondent',y='LanguageWorkedWith',orientation='h')
-        fig.update_layout(xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     with right_col:
         DS2 = data_scientist.groupby('LanguageDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS2,x='Respondent',y='LanguageDesireNextYear',orientation='h')
-        fig.update_layout(xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     st.divider()
@@ -524,7 +525,7 @@ elif selected_section == "Appendix":
     fig.add_trace(go.Scatter(x=country_age['Country'], y=country_age['Age'], name='Mean Age', mode='lines', yaxis='y2',marker=dict(color='blue')))
 
     # update the layout to show the secondary axis
-    fig.update_layout(yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),height=600,title='Top 20 Countries By Respondents and Thier average Age')
+    fig.update_layout(dragmode=False, selectdirection=None,yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),height=600,title='Top 20 Countries By Respondents and Thier average Age')
 
     st.plotly_chart(fig)
 
