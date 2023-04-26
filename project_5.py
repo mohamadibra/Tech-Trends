@@ -424,15 +424,13 @@ elif selected_section == "Results":
 
     # Display map
     st.plotly_chart(fig)       
-
-
     
     # group by Gender and EdLevel and count the number of respondents
     df_count = m_f_tech_demog.groupby(['Gender', 'EdLevel'])['Respondent'].count().reset_index()
     # create stacked bar chart
     fig = px.bar(df_count, y='EdLevel', x='Respondent', color='Gender', barmode='group', orientation='h',
                 title='Number of Respondents by Education Level and Gender')
-    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title='Number of Respondents', yaxis_title='Education Level',height=600)
+    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title='Number of Respondents', yaxis_title='Education Level',height=450)
 
     # Display the chart
     st.plotly_chart(fig)
