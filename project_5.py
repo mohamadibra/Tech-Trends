@@ -439,8 +439,8 @@ elif selected_section == "Results":
     x=tech_demog_age['Age'],
     y=tech_demog_age['Respondent'],
     mode='lines+markers',
-    marker=dict(size=6),
-    line=dict(width=2, color='royalblue'),
+    marker=dict(size=4),
+    line=dict(width=1.5, color='royalblue'),
     hovertemplate='Age: %{x}<br>Respondent: %{y}',
     ))
 
@@ -450,7 +450,7 @@ elif selected_section == "Results":
         xaxis_title='Age',
         yaxis_title='Number of Respondents',
         height = 350,
-        width=500
+        width=430
     )
     st.plotly_chart(fig)
 
