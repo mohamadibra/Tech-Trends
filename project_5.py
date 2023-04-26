@@ -142,8 +142,8 @@ elif selected_section == "Results":
 
     st.header("Programming Languages")
 
-    top_ten_lg_ww = tech_demog.groupby('LanguageWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
-    top_ten_lg_d = tech_demog.groupby('LanguageDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
+    top_ten_lg_ww = tech_demog.groupby('LanguageWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
+    top_ten_lg_d = tech_demog.groupby('LanguageDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
 
     fig = sp.make_subplots(rows=1,cols=2,horizontal_spacing=0.4,column_widths=[0.5, 0.5])
 
@@ -196,8 +196,8 @@ elif selected_section == "Results":
 
     st.header("DataBases")
 
-    top_ten_db_ww = tech_demog.groupby('DatabaseWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
-    top_ten_db_d = tech_demog.groupby('DatabaseDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
+    top_ten_db_ww = tech_demog.groupby('DatabaseWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
+    top_ten_db_d = tech_demog.groupby('DatabaseDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
 
     fig = sp.make_subplots(rows=1,cols=2,horizontal_spacing=0.4,column_widths=[0.5, 0.5])
 
@@ -248,8 +248,8 @@ elif selected_section == "Results":
 
     st.header("Platforms")
 
-    top_ten_pm_ww = tech_demog.groupby('PlatformWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
-    top_ten_pm_d = tech_demog.groupby('PlatformDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
+    top_ten_pm_ww = tech_demog.groupby('PlatformWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
+    top_ten_pm_d = tech_demog.groupby('PlatformDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
 
     fig = sp.make_subplots(rows=1,cols=2,horizontal_spacing=0.4,column_widths=[0.5, 0.5])
 
@@ -301,8 +301,8 @@ elif selected_section == "Results":
 
     st.header("Web Framework")
 
-    top_ten_wf_ww = tech_demog.groupby('WebFrameWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
-    top_ten_wf_d = tech_demog.groupby('WebFrameDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(10)
+    top_ten_wf_ww = tech_demog.groupby('WebFrameWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
+    top_ten_wf_d = tech_demog.groupby('WebFrameDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=True).tail(5)
 
     fig = sp.make_subplots(rows=1,cols=2,horizontal_spacing=0.4,column_widths=[0.5, 0.5])
 
