@@ -523,7 +523,7 @@ elif selected_section == "Appendix":
     fig.add_trace(go.Scatter(x=country_age['Country'], y=country_age['Age'], name='Mean Age', mode='lines', yaxis='y2',marker=dict(color='blue')))
 
     # update the layout to show the secondary axis
-    fig.update_layout(dragmode=False, selectdirection=None,yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),height=500,width=400,title='Top 20 Countries By Respondents and Thier average Age')
+    fig.update_layout(dragmode=False, selectdirection=None,yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),height=300,width=400,title='Top 20 Countries By Respondents and Thier average Age')
 
     st.plotly_chart(fig)
 
