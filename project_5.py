@@ -13,12 +13,8 @@ import streamlit.components.v1 as components
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
-import os
-if os.name == "nt":
-    import ctypes
 
-    ctypes.windll.user32.SetProcessDPIAware()
-import screeninfo
+# import screeninfo
 
 # Set display mode to inline
 # st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -28,7 +24,7 @@ st.set_page_config(layout="wide")
 # st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Get the screen width
-screen_width = screeninfo.get_monitors()[0].width
+# screen_width = screeninfo.get_monitors()[0].width
 
 demog = pd.read_csv('m5_survey_data_demographics.csv')
 tech = pd.read_csv('m5_survey_data_technologies_normalised.csv')
@@ -389,7 +385,6 @@ elif selected_section == "Results":
         # bordercolor='Black',
         # borderwidth=2),
         ),
-        width=int(0.45*screen_width),
         height=400
         )
     
@@ -422,7 +417,6 @@ elif selected_section == "Results":
             projection_type='natural earth',
             ),
         height=500,
-        width=int(0.45*screen_width),
         margin=dict(l=0, r=0, t=70, b=0),
     )
 
@@ -438,7 +432,7 @@ elif selected_section == "Results":
     # create stacked bar chart
     fig = px.bar(df_count, y='EdLevel', x='Respondent', color='Gender', barmode='group', orientation='h',
                 title='Number of Respondents by Education Level and Gender')
-    fig.update_layout(xaxis_title='Number of Respondents', yaxis_title='Education Level',width=int(0.45*screen_width),height=600)
+    fig.update_layout(xaxis_title='Number of Respondents', yaxis_title='Education Level',height=600)
 
     # Display the chart
     st.plotly_chart(fig)
@@ -458,8 +452,7 @@ elif selected_section == "Results":
         title='Number of Respondents by Age',
         xaxis_title='Age',
         yaxis_title='Number of Respondents',
-        height = 500,
-        width=int(0.45*screen_width)
+        height = 500
     )
     st.plotly_chart(fig)
 
@@ -502,13 +495,13 @@ elif selected_section == "Appendix":
     with left_col:
         DS1 = data_scientist.groupby('LanguageWorkedWith')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS1,x='Respondent',y='LanguageWorkedWith',orientation='h')
-        fig.update_layout(width=int(0.20*screen_width),xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(xaxis_title="Number of Respondents",yaxis_title="Language Worked With",title='Data Scientists languages Worked With',margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     with right_col:
         DS2 = data_scientist.groupby('LanguageDesireNextYear')['Respondent'].count().reset_index().sort_values('Respondent',ascending=False)
         fig = px.bar(DS2,x='Respondent',y='LanguageDesireNextYear',orientation='h')
-        fig.update_layout(width=int(0.20*screen_width),xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',margin=dict(l=0, r=0, t=170, b=0))
+        fig.update_layout(xaxis_title="Number of Respondents",yaxis_title="Language Desire Next Year",title='Data Scientists languages Desired Next Year',margin=dict(l=0, r=0, t=170, b=0))
         st.plotly_chart(fig)
     
     st.divider()
@@ -531,7 +524,7 @@ elif selected_section == "Appendix":
     fig.add_trace(go.Scatter(x=country_age['Country'], y=country_age['Age'], name='Mean Age', mode='lines', yaxis='y2',marker=dict(color='blue')))
 
     # update the layout to show the secondary axis
-    fig.update_layout(yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),width=int(0.45 * screen_width),height=600,title='Top 20 Countries By Respondents and Thier average Age')
+    fig.update_layout(yaxis=dict(title='N Respondnets'),yaxis2=dict(title='Mean Age'),height=600,title='Top 20 Countries By Respondents and Thier average Age')
 
     st.plotly_chart(fig)
 
