@@ -13,6 +13,11 @@ import streamlit.components.v1 as components
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
+import os
+if os.name == "nt":
+    import ctypes
+
+    ctypes.windll.user32.SetProcessDPIAware()
 import screeninfo
 
 # Set display mode to inline
