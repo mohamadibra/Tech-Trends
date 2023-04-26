@@ -241,7 +241,7 @@ elif selected_section == "Results":
     # add content to right column
     with right_col:
         st.header("Implications")
-        text = "<ul><li>Relational database management system (RDBMS) is now the most used for operating databases.</li><li>A possible shift in database systems dominance from (RDBMS) to Object-relational databases (ORDBMS).</li><li>Suggests a rise is the popularity of NoSQL databases and new storage technologies to follow up with.</li><li class='no_bullet'>&nbsp;</li><li>shows the relevance of adopting NoSQL for particular internet applications in the next years.</li></ul>"
+        text = "<ul><li>Relational database management system (RDBMS) is now the most used for operating databases.</li><li>A possible shift in database systems dominance from (RDBMS) to Object-relational databases (ORDBMS).</li><li>Suggests a rise is the popularity of NoSQL databases and new storage technologies to follow up with.</li><li>shows the relevance of adopting NoSQL for particular internet applications in the next years.</li></ul>"
         st.markdown(text,unsafe_allow_html=True)
 
     st.divider()  # 👈 Draws a horizontal rule
