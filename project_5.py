@@ -161,7 +161,7 @@ elif selected_section == "Results":
     fig.update_xaxes(title_text='LanguageDesireNextYear',row=1,col=2)
     fig.update_yaxes(title_text='N Respondents',row=1,col=2)
 
-    fig.update_layout(height=400,width=1200, title='Top 5 Programming Languages worked with and Desired Next Year By Respondents',showlegend=True,
+    fig.update_layout(height=400, width=1200, dragmode=False, selectdirection=None, title='Top 5 Programming Languages worked with and Desired Next Year By Respondents',showlegend=True,
         legend=dict(
             x=0.5,
             y=1.05,
