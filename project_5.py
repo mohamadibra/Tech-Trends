@@ -481,7 +481,7 @@ elif selected_section == "Appendix":
     rel_bash = rel_bash[['PlatformWorkedWith','Respondent']]
     st.subheader("Answering the question: Why are Bash/Shell/PowerShell among the top languages used? Here's a diagram of each platform to which this language contributes.")
     fig = px.bar(rel_bash,x='Respondent',y='PlatformWorkedWith',orientation='h')
-    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Platform using Bash/Shell/Powershell",title='Bash/Shell/PowerShell Langauge Users for each Platform',width=400)
+    fig.update_layout(dragmode=False, selectdirection=None,xaxis_title="Number of Respondents",yaxis_title="Platform using Bash/Shell/Powershell",title='Bash/Shell/PowerShell Langauge Users for each Platform',width=400,margin=dict(l=0, r=0, t=170, b=0))
     st.plotly_chart(fig)
 
     st.divider()
