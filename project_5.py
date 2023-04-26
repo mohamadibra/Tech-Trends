@@ -440,7 +440,7 @@ elif selected_section == "Results":
     x=tech_demog_age['Age'],
     y=tech_demog_age['Respondent'],
     mode='lines+markers',
-    marker=dict(size=10),
+    marker=dict(size=6),
     line=dict(width=2, color='royalblue'),
     hovertemplate='Age: %{x}<br>Respondent: %{y}',
     ))
